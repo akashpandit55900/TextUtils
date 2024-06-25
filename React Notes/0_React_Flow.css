@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  font-family: monospace;
+}
+a:hover{
+  background-color: white;
+  color: rgb(1, 1, 106);
+}
+a{
+  text-decoration: underline;
+  font-size: 11px;
+}
+h1{
+  text-decoration: underline;
+}
