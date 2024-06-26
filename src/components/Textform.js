@@ -72,29 +72,30 @@ export default function Textform(props) {
     const [Ptext, setPText] = useState("Nothing to preview!!");
     // text = "new text"; // Wrong way to change the state
     // setText("new text"); // Correct way to change the state
-    const wordCount = text.trim().split(/\s+/).filter((word) => word.length > 0).length;
+    
+    const wordCount = text.split(/\s+/).filter((element)=>{return element.length!==0}).length;
     return (
         <div style={{color: props.mode==='dark'?'white':'black'}}>
             <div className="container" >
-                <h1>{props.heading}</h1>
+                <h1 className='mb-4'>{props.heading}</h1>
                 <div className="mb-3">
-                    <textarea style={{backgroundColor: props.mode==='dark'? '#042743': 'white', color:props.mode=== 'dark'?'white': 'black'}} className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
+                    <textarea style={{backgroundColor: props.mode==='dark'? 'rgb(36 74 104)': 'white', color:props.mode=== 'dark'?'white': 'black'}} className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
                 </div>
-                <button className="btn btn-primary" onClick={handleUpClick}>Convert to Uppercase</button>
-                <button className="btn btn-primary mx-2" onClick={handleLoClick}>Convert to Lowercase</button>
-                <button className="btn btn-primary mx-2" onClick={clearText}>Clear Text</button>
-                <button className="btn btn-primary mx-2" onClick={copyToClipboard}>Copy to Clipboard</button>
-                <button className="btn btn-primary mx-1" onClick={handleExtraSpaces}>Remove extra spaces</button>
-                <button className="btn btn-success mx-2" onClick={handleSpeak}>Listen Now</button>
-                <button className="btn btn-danger mx-2" onClick={handleStopSpeak}>Stop Listen</button>
+                <button disabled = {text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
+                <button disabled = {text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>Convert to Lowercase</button>
+                <button disabled = {text.length === 0} className="btn btn-primary mx-1 my-1" onClick={clearText}>Clear Text</button>
+                <button disabled = {text.length === 0} className="btn btn-primary mx-1 my-1" onClick={copyToClipboard}>Copy to Clipboard</button>
+                <button disabled = {text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleExtraSpaces}>Remove extra spaces</button>
+                <button disabled = {text.length === 0} className="btn btn-success mx-1 my-1" onClick={handleSpeak}>Listen Now</button>
+                <button disabled = {text.length === 0} className="btn btn-danger mx-1 my-1" onClick={handleStopSpeak}>Stop Listen</button>
             </div>
             <div className="container my-3">
                 <h2>Your text summary</h2>
                 <p>{wordCount} words and {text.length} characters</p>
 
-                <p>{wordCount > 0 ? 0.008 * wordCount : 0} Minutes read</p>
+                <p>{0.008 * wordCount} Minutes read</p>
                 <h2>Preview</h2>
-                <p>{Ptext.length==0? "Nothing to preview!!" : Ptext}</p>
+                <p>{Ptext.length===0? "Nothing to preview!!" : Ptext}</p>
             </div>
         </div>
     )
