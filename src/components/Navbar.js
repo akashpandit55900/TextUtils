@@ -22,77 +22,11 @@ export default function Navbar(props) {
                             </li>
                         </ul>
 
-                        <button
-                            className="color-palette-btn mx-1"
-                            style={{
-                                width: '30px',
-                                height: '30px',
-                                borderRadius: '50%',
-                                backgroundColor: '#ffffff',
-                                border: '2px solid white'
-                            }}
-                            onClick={props.toggleMode}
-                        ></button>
-                        <button
-                            className="color-palette-btn mx-1"
-                            style={{
-                                width: '30px',
-                                height: '30px',
-                                borderRadius: '50%',
-                                backgroundColor: '#53031e',
-                                border: '2px solid white'
-                            }}
-                            onClick={props.toggleMode}
-                        ></button>
-                        <button
-                            className="color-palette-btn mx-1"
-                            style={{
-                                width: '30px',
-                                height: '30px',
-                                borderRadius: '50%',
-                                backgroundColor: '#460252',
-                                border: '2px solid white'
-                            }}
-                            onClick={props.toggleMode}
-                        ></button>
-                        <button
-                            className="color-palette-btn mx-1"
-                            style={{
-                                width: '30px',
-                                height: '30px',
-                                borderRadius: '50%',
-                                backgroundColor: '#007368',
-                                border: '2px solid white'
-                            }}
-                            onClick={props.toggleMode}
-                        ></button>
-                        <button
-                            className="color-palette-btn mx-1"
-                            style={{
-                                width: '30px',
-                                height: '30px',
-                                borderRadius: '50%',
-                                backgroundColor: '#042743',
-                                border: '2px solid white'
-                            }}
-                            onClick={props.toggleMode}
-                        ></button>
-                        <button
-                            className="color-palette-btn mx-1 "
-                            style={{
-                                width: '30px',
-                                height: '30px',
-                                borderRadius: '50%',
-                                backgroundColor: '#000000',
-                                border: '2px solid white'
-                            }}
-                            onClick={props.toggleMode}
-                        ></button>
 
-                        {/* <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}> */}
-                            {/* <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" /> */}
-                            {/* <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{`Enable ${props.mode === 'light' ? 'dark' : 'light'} mode`}</label> */}
-                        {/* </div> */}
+                        <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}> 
+                            <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{`Enable ${props.mode === 'light' ? 'dark' : 'light'} mode`}</label>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -109,5 +43,4 @@ export default function Navbar(props) {
 //     title: 'Set title here',
 //     about: 'About text here'
 // };
-
 

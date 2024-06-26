@@ -6,7 +6,6 @@ import Textform from "./components/Textform";
 import About from "./components/About";
 import Alert from './components/Alert';
 
-
 //React router dom
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
